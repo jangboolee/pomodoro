@@ -42,8 +42,7 @@ class PomodoroTimer:
         self.pomo_count = 0
 
     def start_pomo(self) -> None:
-        """Method to start a focus timer
-        """
+        """Method to start a focus timer"""
 
         # Find start and end time for the focus round
         self.focus_start_time = datetime.now()
@@ -69,8 +68,7 @@ class PomodoroTimer:
                        end_time=self.focus_end_time.time())
 
     def start_rest(self) -> None:
-        """Method to start a rest timer
-        """
+        """Method to start a rest timer"""
 
         # If the Pomodoro count matches the specified interval
         if self.pomo_count % self.interval == 0:
