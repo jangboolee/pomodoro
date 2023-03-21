@@ -15,6 +15,7 @@ class PomodoroTimer:
     rest_mins (int): Duration for each rest interval
     interval (int): Interval count to alternate between regular and long rest
     pomo_count (int): Counter of completed pomodoro timers
+
     Methods
     ---------------
     start_pomo(): Start focus time for Pomodoro timer
@@ -23,13 +24,6 @@ class PomodoroTimer:
     """
 
     def __init__(self, focus_mins: int, rest_mins: int, interval: int) -> None:
-        """
-        Args:
-            focus_mins (int): Duration for each focus interval
-            rest_mins (int): Duration for each rest interval
-            interval (int): Interval count to alternate between
-                regular and long rest
-        """
 
         # Initialize Pomodoro timer attributes based on user input
         self.focus_mins = focus_mins
@@ -101,6 +95,7 @@ class PomodoroTimer:
     def write_log(self, timer_type: str,
                   start_time: datetime, end_time: datetime) -> None:
         """Method to update the Pomodoro log file after each completion
+
         Args:
             timer_type (str): Type of either 'focus' or 'rest'
             start_time (datetime): The start time of each timer
@@ -134,7 +129,7 @@ def main():
 
     # Start focus and rest loop
     while True:
-        
+
         Pomo.start_pomo()
         Pomo.start_rest()
 
