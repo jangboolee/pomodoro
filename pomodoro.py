@@ -51,7 +51,7 @@ class PomodoroTimer:
         self.pomo_count += 1
         notification.notify(
             title='Good job!',
-            message=f'Take a {self.focus_mins} minute break! '
+            message=f'Take a {self.rest_mins} minute break! '
                     f'You have completed {self.pomo_count} pomodoros so far.'
         )
 
