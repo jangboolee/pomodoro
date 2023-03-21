@@ -43,7 +43,7 @@ class PomodoroTimer:
                                + timedelta(minutes=self.focus_mins))
 
         # Start focus timer for given focus duration
-        print(f'Starting pomodoro #{self.pomo_count + 1}...')
+        print(f'\nStarting pomodoro #{self.pomo_count + 1}...')
         for _ in tqdm(range(self.focus_mins * 60)):
             sleep(1)
 
