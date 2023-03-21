@@ -9,6 +9,7 @@ from tqdm import tqdm
 class PomodoroTimer:
     """
     Class to represent a single Pomodoro timer
+
     Attributes
     ---------------
     focus_mins (int): Duration for each focus interval
