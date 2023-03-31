@@ -144,7 +144,7 @@ def main():
 
         # If the user chooses to start another Pomodoro timer
         if user_input.lower() == 'y':
-            # Keep looping through focus and rest
+            # Keep looping through the Pomo cycle
             pass
         # If the user chooses not to start another Pomodoro timer
         else:
