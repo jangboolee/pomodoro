@@ -47,11 +47,22 @@ class PomodoroTimer:
         for _ in tqdm(range(self.focus_mins * 60)):
             sleep(1)
 
-        # # Increment pomodoro count and give focus completion notification
+        # Increment pomodoro count and 
         self.pomo_count += 1
+        
+        # If the Pomodoro count matches the specified interval
+        if self.pomo_count % self.interval == 0:
+            # Rest for 3 times longer than regular rest iterations
+            rest_mins = self.rest_mins * 3
+        # For regular rest iterations
+        else:
+            # Rest for the regular rest duration
+            rest_mins = self.rest_mins
+        
+        # Give focus completion notification
         notification.notify(
             title='Good job!',
-            message=f'Take a {self.rest_mins} minute break! '
+            message=f'Take a {rest_mins} minute break! '
                     f'You have completed {self.pomo_count} pomodoros so far.'
         )
 
@@ -62,15 +73,6 @@ class PomodoroTimer:
 
     def start_rest(self) -> None:
         """Method to start a rest timer"""
-
-        # If the Pomodoro count matches the specified interval
-        if self.pomo_count % self.interval == 0:
-            # Rest for 3 times longer than regular rest iterations
-            rest_mins = self.rest_mins * 3
-        # For regular rest iterations
-        else:
-            # Rest for the regular rest duration
-            rest_mins = self.rest_mins
 
         # Find start and end time for the rest round
         self.rest_start_time = datetime.now()
