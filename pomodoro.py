@@ -74,6 +74,15 @@ class PomodoroTimer:
     def start_rest(self) -> None:
         """Method to start a rest timer"""
 
+        # If the Pomodoro count matches the specified interval
+        if self.pomo_count % self.interval == 0:
+            # Rest for 3 times longer than regular rest iterations
+            rest_mins = self.rest_mins * 3
+        # For regular rest iterations
+        else:
+            # Rest for the regular rest duration
+            rest_mins = self.rest_mins
+
         # Find start and end time for the rest round
         self.rest_start_time = datetime.now()
         self.rest_end_time = (self.rest_start_time
